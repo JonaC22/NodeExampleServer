@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+//Import de Moment.js 
+=======
+>>>>>>> branch 'master' of https://github.com/JonaC22/NodeExampleServer.git
 var moment = require('moment');
 var sys = require("sys"),  
 my_http = require("http");  
@@ -9,4 +13,8 @@ my_http.createServer(function(request,response){
 	response.write(moment().locale('es').format('LLLL'));  
 	response.end();  
 }).listen(8080);  
+<<<<<<< HEAD
+//El servidor va estar escuchando en localhost:8080
+=======
+>>>>>>> branch 'master' of https://github.com/JonaC22/NodeExampleServer.git
 sys.puts("Server Running on 8080");
