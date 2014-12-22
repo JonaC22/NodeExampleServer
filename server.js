@@ -12,3 +12,20 @@ my_http.createServer(function(request,response){
 }).listen(8080);  
 //El servidor va estar escuchando en localhost:8080
 sys.puts("Server Running on 8080");
+
+//Introduciendo Express.js
+var express = require('express')
+var app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+var server = app.listen(3000, function () {
+
+  var host = server.address().address
+  var port = server.address().port
+
+  console.log('Example app listening at http://%s:%s', host, port)
+
+})
