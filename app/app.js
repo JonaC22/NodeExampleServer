@@ -38,7 +38,8 @@ app.use('/users/:id', function (req, res, next) {
 
 // a route and its handler function (middleware system) which handles GET requests to /user/:id
 app.get('/users/:id', function (req, res, next) {
-  res.send('USER :id');
+  var id = req.params.id;
+  res.send('GET: USER ' + id);
 });
 
 /// catch 404 and forwarding to error handler
