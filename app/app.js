@@ -24,6 +24,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+// a middleware with no mount path; gets executed for every request to the app
+app.use(function (req, res, next) {
+  console.log('Time:', Date.now());
+  next();
+});
+
+// a middleware mounted on /user/:id; will be executed for any type of HTTP request to /user/:id
+app.use('/users/:id', function (req, res, next) {
+  console.log('Request Type:', req.method);
+  next();
+});
+
+// a route and its handler function (middleware system) which handles GET requests to /user/:id
+app.get('/users/:id', function (req, res, next) {
+  res.send('USER :id');
+});
+
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
