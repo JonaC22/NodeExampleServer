@@ -11,10 +11,13 @@ block content
 div.top
    form.form-horizontal(method="post", id="loginForm")
       label Username
+      div.content
         input.span3(id="username", type="text", name="User", placeholder="Enter your username")
       label Password
+      div.content
         input.span3(id="password", type="password", name="Password")
-      input.btn(type="submit", value="Log In")
+      div.content
+        input.btn(type="submit", value="Log In")
 div.container
     div.content
       table.table.table-striped
