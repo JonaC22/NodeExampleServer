@@ -7,7 +7,9 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  alert('Log in OK');
+  var obj = {};
+  console.log('body: ' + JSON.stringify(req.body));
+  res.send(req.body);
 });
 
 module.exports = router;
