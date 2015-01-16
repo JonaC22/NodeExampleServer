@@ -7,5 +7,16 @@ var collections = ["users", "reports"]
 var db = require("mongojs").connect(databaseUrl, collections); 
 
 //query de ejemplo, la funcion callback manipula los resultados cuando se obtienen
-//loguea por consola los usuarios mayores de edad
-db.users.find({age > 18}, function(err, users) { if( err || !users) console.log("No adult users found"); else users.forEach( function(adultUser) { console.log(adultUser); } ); });
+//loguea por consola los usuarios masculinos
+db.users.find({sex: "male"}, function(err, users) { 
+  if( err || !users) console.log("No male users found"); 
+  else users.forEach( function(maleUser) { 
+    console.log(maleUser); 
+  }); 
+}); 
+
+//ejemplo de insertar un nuevo usuario
+db.users.save({email: "email@gmail.com", password: "mongo", sex: "male"}, function(err, saved) { 
+  if( err || !saved ) console.log("User not saved"); 
+  else console.log("User saved"); 
+});
