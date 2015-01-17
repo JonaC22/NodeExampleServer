@@ -19,4 +19,12 @@ db.users.find({sex: "male"}, function(err, users) {
 db.users.save({email: "email@gmail.com", password: "mongo", sex: "male"}, function(err, saved) { 
   if( err || !saved ) console.log("User not saved"); 
   else console.log("User saved"); 
+}); 
+
+//ejemplo de actualizacion de password de un usuario
+db.users.update({email: "email@gmail.com"}, 
+{$set: {password: "mongodb"}}, 
+function(err,updated){
+  if( err || !updated ) console.log("User not updated"); 
+  else console.log("User updated"); 
 });
