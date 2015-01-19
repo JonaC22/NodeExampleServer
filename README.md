@@ -15,7 +15,8 @@ TODO
 
 - Integrar con:
     - Express.js 
-    - MongoDB
+    - MongoDB 
+      - Mongoose
     - Bootstrap
 - Crear frontend
-- Crear backend REST 
+- Crear backend REST -> Express.js
