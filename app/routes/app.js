@@ -8,6 +8,7 @@ var db = require("mongojs").connect(databaseUrl, collections);
 
 //query de ejemplo, la funcion callback manipula los resultados cuando se obtienen
 //loguea por consola los usuarios masculinos
+//remove, en vez de find, para eliminar
 db.users.find({sex: "male"}, function(err, users) { 
   if( err || !users) console.log("No male users found"); 
   else users.forEach( function(maleUser) { 
