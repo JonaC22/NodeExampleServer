@@ -8,13 +8,17 @@ var db = require("mongojs").connect(databaseUrl, collections);
 
 //query de ejemplo, la funcion callback manipula los resultados cuando se obtienen
 //loguea por consola los usuarios masculinos
-//remove, en vez de find, para eliminar
 db.users.find({sex: "male"}, function(err, users) { 
   if( err || !users) console.log("No male users found"); 
   else users.forEach( function(maleUser) { 
     console.log(maleUser); 
   }); 
 }); 
+
+db.users.remove({email: "email@gmail.com"}, 
+function(err){ 
+  if(err) console.log("Users doesn't exists");
+});
 
 //ejemplo de insertar un nuevo usuario
 db.users.save({email: "email@gmail.com", password: "mongo", sex: "male"}, function(err, saved) { 
