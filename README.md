@@ -18,5 +18,6 @@ TODO
     - MongoDB 
       - Mongoose
     - Bootstrap
+    - Socket.IO 
 - Crear frontend
 - Crear backend REST -> Express.js
