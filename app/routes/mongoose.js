@@ -1,3 +1,5 @@
+var express = require('express');
+var router = express.Router();
 var mongoose = require('mongoose'); 
 mongoose.connect('mongodb://localhost/test');
 
@@ -8,3 +10,15 @@ kitty.save(function (err) {
   if (err) // ... 
   console.log('meow'); 
 });
+
+router.get('/', function(req, res) {
+  var query  = Cat.where({ name : 'Zildjian' });
+  query.findOne(function (err, kitten) {
+	  if (err) return handleError(err);
+	  if (kitten) {
+	    res.send(kitten);
+	  }
+  });
+});
+
+module.exports = router;

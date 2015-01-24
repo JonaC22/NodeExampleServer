@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var mongoose = require('./routes/mongoose');
+var mongo = require('./routes/mongo');
 var app = express();
 
 // view engine setup
@@ -21,8 +22,11 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//agrega las rutas
 app.use('/', routes);
 app.use('/users', users);
+app.use('/mongoose', mongoose);
+app.use('/mongo', mongo);
 
 // a middleware with no mount path; gets executed for every request to the app
 app.use(function (req, res, next) {
