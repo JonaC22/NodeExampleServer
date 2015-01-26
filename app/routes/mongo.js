@@ -1,3 +1,4 @@
+//mongo.js
 var express = require('express');
 var router = express.Router();
 var databaseUrl = "mongodb://localhost/test"; 

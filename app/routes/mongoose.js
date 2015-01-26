@@ -1,3 +1,5 @@
+//mongoose.js 
+//abstrae la creacion de modelos, al estilo ORM
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose'); 
