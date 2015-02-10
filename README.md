@@ -23,5 +23,7 @@ TODO
       - Mongoose
     - Bootstrap
     - Socket.IO 
+- Testing
+    - [Mochajs](http://mochajs.org/)
 - Crear frontend
 - Crear backend REST -> Express.js
